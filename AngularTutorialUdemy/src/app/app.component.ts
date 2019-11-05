@@ -8,18 +8,6 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'My AngularTutorialUdemy';
-  name = 'Lukas'
-
-
-
-  private Test()
-{
-  console.log('Testing Here !!!!')
-}
-
-
-
 }
 
 
