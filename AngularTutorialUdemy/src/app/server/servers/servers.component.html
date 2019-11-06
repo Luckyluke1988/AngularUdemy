@@ -1,0 +1,25 @@
+<h3>Type Server Name</h3>
+
+<input type="Text" class="form-control" [(ngModel)]="serverName">
+
+<!--p>ServerName:{{serverName}}</p>-->
+
+<button style="margin:5px;" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()"> Add Server </button>
+<button style="margin:5px;" class="btn btn-primary"  (click)="onDeleteServer()"> Delete Server </button>
+
+<p>{{allowNewServer}}</p>
+
+<ul>
+<li *ngFor="let server of serverList let i = index">
+    {{i}} {{server}}
+</li>
+</ul>
+
+<p>{{serverCreationStatus}}</p>
+<p>Server Status is </p>
+
+<app-server *ngFor= "let server of serverList"></app-server>
+
+<hr>
+
+<app-user-form></app-user-form>

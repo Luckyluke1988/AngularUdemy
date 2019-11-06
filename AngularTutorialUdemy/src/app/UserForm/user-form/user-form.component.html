@@ -1,0 +1,19 @@
+<h2>Set User Name</h2>
+<input type="Text" class="form-control" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button style="margin:5px;" class="btn btn-primary" (click)="deleteUserName()" [disabled]="!userName" > Clear user </button>
+<button style="margin:5px;" class="btn btn-primary" [disabled]="!userName" (click)="updateUserList()" > Add user </button>
+<ul>
+<li *ngFor="let user of userNameList let i = index">
+    {{i}} {{user}}
+</li>
+</ul>
+<hr>
+<h2>Log Button Click </h2>
+<button style="margin:5px;" class="btn btn-primary" (click)="changeDetails()"> Display Details </button>
+<button style="margin:5px;" class="btn btn-primary" (click)="deleteDetails()"> Delete Details Log </button>
+
+<p *ngIf="showDetails">Deatils: Hello User!!!</p>
+<li *ngFor="let Detail of showDetailsList">
+{{Detail}}
+</li>
