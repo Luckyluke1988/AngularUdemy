@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No Server was Created!';
-  serverName='TestServer';
+  serverName='';
   serverList = [];
   serverStatus : string = 'Offline';
 
@@ -32,7 +32,7 @@ export class ServersComponent implements OnInit {
   {
     this.serverCreationStatus = 'New Server Created ' + this.serverName;
     this.serverList.push(this.serverName);
-    console.log(this.serverList)
+    this.serverName = '';
   }
 
   onDeleteServer()

@@ -14,6 +14,8 @@ export class UserFormComponent implements OnInit {
 
   showDetailsList = [];
 
+  changeColor = '';
+
   constructor() { }
 
 
@@ -24,6 +26,7 @@ export class UserFormComponent implements OnInit {
   updateUserList()
   {
     this.userNameList.push(this.userName);
+    this.userName = '';
   }
 
 
@@ -36,11 +39,24 @@ export class UserFormComponent implements OnInit {
   changeDetails()
   {
     this.showDetails = !this.showDetails;
-    this.showDetailsList.push(new Date);
+    this.showDetailsList.push(new Date)
+    if( this.showDetailsList.length > 5)
+    {
+      this.changeColor = 'green';
+    }
+    else
+    {
+      this.changeColor = '';
+    }
   }
 
   deleteDetails()
   {
     this.showDetailsList.splice(this.showDetailsList.length-1,1)
+  }
+
+  deleteUser()
+  {
+    this.userNameList.splice(this.userNameList.length-1,1)
   }
 }
